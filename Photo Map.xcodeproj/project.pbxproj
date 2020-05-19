@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11D16EF31BD08AAE00B6CBFE /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D16EF21BD08AAE00B6CBFE /* PhotoMapViewController.swift */; };
-		11D16EF51BD08ABE00B6CBFE /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D16EF41BD08ABE00B6CBFE /* FullImageViewController.swift */; };
-		228D474F19F5DA9F00DE9903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D474E19F5DA9F00DE9903 /* AppDelegate.swift */; };
 		228D475419F5DA9F00DE9903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228D475219F5DA9F00DE9903 /* Main.storyboard */; };
 		228D475619F5DA9F00DE9903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228D475519F5DA9F00DE9903 /* Images.xcassets */; };
-		228D477019F5DAFF00DE9903 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D476F19F5DAFF00DE9903 /* LocationsViewController.swift */; };
-		22BB9BD519F5DD21000048C2 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB9BD419F5DD21000048C2 /* LocationCell.swift */; };
 		6826E347F5D9EF6A3D333CFD /* Pods_Photo_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC4DB21675DB244D449223 /* Pods_Photo_Map.framework */; };
 		72441CE624749C1F0026AEAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72441CE524749C1F0026AEAA /* LaunchScreen.storyboard */; };
 		72441CE924749CDB0026AEAA /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72441CE824749CDB0026AEAA /* ApiKeys.plist */; };
 		72441CEB24749D010026AEAA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEA24749D010026AEAA /* Constant.swift */; };
+		72441CF02474A0970026AEAA /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEC2474A0970026AEAA /* PhotoMapViewController.swift */; };
+		72441CF12474A0970026AEAA /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CED2474A0970026AEAA /* LocationsViewController.swift */; };
+		72441CF22474A0970026AEAA /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEE2474A0970026AEAA /* FullImageViewController.swift */; };
+		72441CF32474A0970026AEAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEF2474A0970026AEAA /* AppDelegate.swift */; };
+		72441CF52474A0AD0026AEAA /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CF42474A0AD0026AEAA /* LocationCell.swift */; };
 		BBF798AC221D27CF00849C03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF798AB221D27CF00849C03 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		095821C56621DE4F089ED372 /* Pods-Photo Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.release.xcconfig"; sourceTree = "<group>"; };
 		0AAC4DB21675DB244D449223 /* Pods_Photo_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D16EF21BD08AAE00B6CBFE /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoMapViewController.swift; path = ../PhotoMapViewController.swift; sourceTree = "<group>"; };
-		11D16EF41BD08ABE00B6CBFE /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullImageViewController.swift; path = ../FullImageViewController.swift; sourceTree = "<group>"; };
 		12B190D8026AA9DA033871B1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258D28219F5E60100F013CE /* Photo Map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photo Map-Bridging-Header.h"; sourceTree = "<group>"; };
 		228D474919F5DA9F00DE9903 /* Photo Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		228D474D19F5DA9F00DE9903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		228D474E19F5DA9F00DE9903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		228D475319F5DA9F00DE9903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		228D475519F5DA9F00DE9903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		228D476F19F5DAFF00DE9903 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = ../LocationsViewController.swift; sourceTree = "<group>"; };
-		22BB9BD419F5DD21000048C2 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = ../../LocationCell.swift; sourceTree = "<group>"; };
 		72441CE524749C1F0026AEAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72441CE824749CDB0026AEAA /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		72441CEA24749D010026AEAA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		72441CEC2474A0970026AEAA /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
+		72441CED2474A0970026AEAA /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		72441CEE2474A0970026AEAA /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
+		72441CEF2474A0970026AEAA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		72441CF42474A0AD0026AEAA /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		BBF798AB221D27CF00849C03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9AC61ABBFF5EEBA5C1C0CB9 /* Pods-Photo Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,10 +106,10 @@
 		72441CDE24749B550026AEAA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				228D474E19F5DA9F00DE9903 /* AppDelegate.swift */,
-				228D476F19F5DAFF00DE9903 /* LocationsViewController.swift */,
-				11D16EF21BD08AAE00B6CBFE /* PhotoMapViewController.swift */,
-				11D16EF41BD08ABE00B6CBFE /* FullImageViewController.swift */,
+				72441CEF2474A0970026AEAA /* AppDelegate.swift */,
+				72441CEE2474A0970026AEAA /* FullImageViewController.swift */,
+				72441CED2474A0970026AEAA /* LocationsViewController.swift */,
+				72441CEC2474A0970026AEAA /* PhotoMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 		72441CE024749B660026AEAA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				22BB9BD419F5DD21000048C2 /* LocationCell.swift */,
+				72441CF42474A0AD0026AEAA /* LocationCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -285,11 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D16EF51BD08ABE00B6CBFE /* FullImageViewController.swift in Sources */,
-				22BB9BD519F5DD21000048C2 /* LocationCell.swift in Sources */,
-				228D474F19F5DA9F00DE9903 /* AppDelegate.swift in Sources */,
-				11D16EF31BD08AAE00B6CBFE /* PhotoMapViewController.swift in Sources */,
-				228D477019F5DAFF00DE9903 /* LocationsViewController.swift in Sources */,
+				72441CF52474A0AD0026AEAA /* LocationCell.swift in Sources */,
+				72441CF02474A0970026AEAA /* PhotoMapViewController.swift in Sources */,
+				72441CF22474A0970026AEAA /* FullImageViewController.swift in Sources */,
+				72441CF12474A0970026AEAA /* LocationsViewController.swift in Sources */,
+				72441CF32474A0970026AEAA /* AppDelegate.swift in Sources */,
 				72441CEB24749D010026AEAA /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

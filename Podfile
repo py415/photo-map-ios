@@ -6,4 +6,5 @@ target 'Photo Map' do
 
  # Pods for Parse Chat
   pod 'AFNetworking'
+  
 end
