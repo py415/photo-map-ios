@@ -13,7 +13,9 @@ import MapKit
 
 class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
     
-    /* ---- TODO: Create mapView outlet*/
+    // MARK: - Outlets
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var cameraButton: UIButton!
     
     // MARK: - Properties
     
@@ -24,7 +26,30 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         
         super.viewDidLoad()
         
+        // Set properties for button
+        cameraButton.makeCircular()
+        
+        // One degree of latitude is approximately 111 kilometers (69 miles) at all times.
+        // San Francisco Lat, Long = latitude: 37.783333, longitude: -122.416667
+        let mapCenter = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
+        // Set animated property to true to animate the transition to the region
+        mapView.setRegion(region, animated: false)
+        
     }
+    
+    // MARK: - IBAction Section
+    @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        
+        print("Camera button tapped...")
+        
+        // Open photo library or camera
+        selectPhoto()
+        
+    }
+    
+    // MARK: - Private Functions Section
     
     // Instantiate Image Picker and set delegate to this view controller
     private func selectPhoto() {
@@ -49,10 +74,6 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         self.present(imagePicker, animated: true, completion: nil)
         
     }
-    
-    /* ------ TODO: Set initial location after launching app */
-    
-    /* ----- TODO: Instantiate UIImagePicker after camera button tapped */
     
     /* ----- TODO: Override prepare (for segue) funcion to show Present LocationsViewController */
     

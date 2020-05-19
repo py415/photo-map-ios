@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo Map View Controller-->
+        <!--Photo Map-->
         <scene sceneID="Eh3-Ch-REm">
             <objects>
                 <viewController id="ghP-Ww-KKQ" customClass="PhotoMapViewController" customModule="Photo_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,10 +17,37 @@
                     <view key="view" contentMode="scaleToFill" id="Lxe-6f-KEH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eVq-Ul-LZf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-RY-F8c">
+                                <rect key="frame" x="147" y="682" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4E8-eJ-HlC"/>
+                                    <constraint firstAttribute="width" constant="100" id="ifS-KC-gnm"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="ghP-Ww-KKQ" eventType="touchUpInside" id="cGV-OD-FhE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eVq-Ul-LZf" firstAttribute="top" secondItem="vrG-Wc-0bn" secondAttribute="bottom" id="AX2-Py-pFX"/>
+                            <constraint firstAttribute="trailing" secondItem="eVq-Ul-LZf" secondAttribute="trailing" id="TDJ-Xp-0j0"/>
+                            <constraint firstAttribute="bottom" secondItem="eVq-Ul-LZf" secondAttribute="bottom" id="YUT-7u-mJh"/>
+                            <constraint firstItem="eVq-Ul-LZf" firstAttribute="leading" secondItem="Lxe-6f-KEH" secondAttribute="leading" id="a7x-Hm-g5v"/>
+                            <constraint firstItem="U8i-RY-F8c" firstAttribute="centerX" secondItem="Lxe-6f-KEH" secondAttribute="centerX" constant="-10" id="uYn-WA-MGl"/>
+                            <constraint firstItem="ufw-e1-uLx" firstAttribute="top" secondItem="U8i-RY-F8c" secondAttribute="bottom" constant="80" id="xEG-qH-3ID"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aPF-0T-Ydb"/>
+                    <navigationItem key="navigationItem" title="Photo Map" id="aPF-0T-Ydb"/>
                     <connections>
+                        <outlet property="cameraButton" destination="U8i-RY-F8c" id="k9r-AU-h0d"/>
+                        <outlet property="mapView" destination="eVq-Ul-LZf" id="kKU-iK-t9v"/>
                         <segue destination="WeT-38-qba" kind="push" identifier="fullImageSegue" id="B5X-dM-HfZ"/>
                     </connections>
                 </viewController>
@@ -153,4 +180,7 @@
             <point key="canvasLocation" x="174.40000000000001" y="-2.6986506746626691"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="64" height="64"/>
+    </resources>
 </document>
