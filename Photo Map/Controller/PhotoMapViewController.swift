@@ -11,7 +11,7 @@
 import UIKit
 import MapKit
 
-class PhotoMapViewController: UIViewController, UINavigationControllerDelegate, MKMapViewDelegate {
+class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -85,7 +85,7 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate, 
         let locationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         annotation.coordinate = locationCoordinate
-        annotation.title = "Latitude: \(latitude), Longitude: \(longitude)"
+        annotation.title = String(describing: latitude)
         
         mapView.addAnnotation(annotation)
         
@@ -163,5 +163,40 @@ extension PhotoMapViewController: LocationsViewControllerDelegate {
         addPin(atLat: latitude, andLong: longitude)
         
     }
+    
+}
+
+extension PhotoMapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseID = "myAnnotationView"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            annotationView!.canShowCallout = true
+            annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        }
+
+        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
+
+        // Add the image you stored from the image picker
+        imageView.image = pickedImage
+
+        return annotationView
+        
+    }
+    
+//    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+//
+//        let lattitude = view.annotation?.coordinate.latitude
+//        let longitude = view.annotation?.coordinate.longitude
+//
+//        guard let appleMapsURL = URL(string: "http://maps.apple.com/?q=\(lattitude),\(longitude)") else { return }
+//
+//        UIApplication.shared.open(appleMapsURL, options: [:], completionHandler: nil)
+//
+//    }
     
 }
