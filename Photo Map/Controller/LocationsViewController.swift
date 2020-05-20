@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+// MARK: - Protocol Section
+
 protocol LocationsViewControllerDelegate: class {
     
     func locationsPickedLocation(controller: LocationsViewController, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
@@ -45,6 +47,8 @@ class LocationsViewController: UIViewController {
         
     }
     
+    // MARK: - Private Function Section
+    
     private func fetchLocations(_ query: String, near: String = "San Francisco") {
         
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
@@ -60,7 +64,6 @@ class LocationsViewController: UIViewController {
             if let data = dataOrNil {
                 if let responseDictionary = try! JSONSerialization.jsonObject(
                     with: data, options: []) as? NSDictionary {
-//                    NSLog("response: \(responseDictionary)")
                     self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
                     self.tableView.reloadData()
                     

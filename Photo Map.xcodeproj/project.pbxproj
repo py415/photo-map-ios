@@ -11,13 +11,13 @@
 		228D475619F5DA9F00DE9903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228D475519F5DA9F00DE9903 /* Images.xcassets */; };
 		6826E347F5D9EF6A3D333CFD /* Pods_Photo_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC4DB21675DB244D449223 /* Pods_Photo_Map.framework */; };
 		72441CE624749C1F0026AEAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72441CE524749C1F0026AEAA /* LaunchScreen.storyboard */; };
-		72441CE924749CDB0026AEAA /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72441CE824749CDB0026AEAA /* ApiKeys.plist */; };
 		72441CEB24749D010026AEAA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEA24749D010026AEAA /* Constant.swift */; };
 		72441CF02474A0970026AEAA /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEC2474A0970026AEAA /* PhotoMapViewController.swift */; };
 		72441CF12474A0970026AEAA /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CED2474A0970026AEAA /* LocationsViewController.swift */; };
 		72441CF22474A0970026AEAA /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEE2474A0970026AEAA /* FullImageViewController.swift */; };
 		72441CF32474A0970026AEAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CEF2474A0970026AEAA /* AppDelegate.swift */; };
 		72441CF52474A0AD0026AEAA /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72441CF42474A0AD0026AEAA /* LocationCell.swift */; };
+		72FEC80A24751C6D0075D155 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72FEC80924751C6D0075D155 /* ApiKeys.plist */; };
 		BBF798AC221D27CF00849C03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF798AB221D27CF00849C03 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,19 +25,18 @@
 		095821C56621DE4F089ED372 /* Pods-Photo Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.release.xcconfig"; sourceTree = "<group>"; };
 		0AAC4DB21675DB244D449223 /* Pods_Photo_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B190D8026AA9DA033871B1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2258D28219F5E60100F013CE /* Photo Map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photo Map-Bridging-Header.h"; sourceTree = "<group>"; };
 		228D474919F5DA9F00DE9903 /* Photo Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		228D474D19F5DA9F00DE9903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228D475319F5DA9F00DE9903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		228D475519F5DA9F00DE9903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		72441CE524749C1F0026AEAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		72441CE824749CDB0026AEAA /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		72441CEA24749D010026AEAA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		72441CEC2474A0970026AEAA /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
 		72441CED2474A0970026AEAA /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		72441CEE2474A0970026AEAA /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		72441CEF2474A0970026AEAA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72441CF42474A0AD0026AEAA /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		72FEC80924751C6D0075D155 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		BBF798AB221D27CF00849C03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9AC61ABBFF5EEBA5C1C0CB9 /* Pods-Photo Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Map/Pods-Photo Map.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,9 +133,8 @@
 		72441CE424749BBE0026AEAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72441CE824749CDB0026AEAA /* ApiKeys.plist */,
 				228D474D19F5DA9F00DE9903 /* Info.plist */,
-				2258D28219F5E60100F013CE /* Photo Map-Bridging-Header.h */,
+				72FEC80924751C6D0075D155 /* ApiKeys.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72441CE624749C1F0026AEAA /* LaunchScreen.storyboard in Resources */,
-				72441CE924749CDB0026AEAA /* ApiKeys.plist in Resources */,
+				72FEC80A24751C6D0075D155 /* ApiKeys.plist in Resources */,
 				228D475419F5DA9F00DE9903 /* Main.storyboard in Resources */,
 				228D475619F5DA9F00DE9903 /* Images.xcassets in Resources */,
 			);
@@ -427,7 +425,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yuphilip.Photo-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Photo Map/Supporting Files/Photo Map-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -446,7 +443,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yuphilip.Photo-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Photo Map/Supporting Files/Photo Map-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
