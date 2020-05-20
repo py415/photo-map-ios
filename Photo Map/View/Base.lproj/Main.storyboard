@@ -49,6 +49,7 @@
                         <outlet property="cameraButton" destination="U8i-RY-F8c" id="k9r-AU-h0d"/>
                         <outlet property="mapView" destination="eVq-Ul-LZf" id="kKU-iK-t9v"/>
                         <segue destination="WeT-38-qba" kind="push" identifier="fullImageSegue" id="B5X-dM-HfZ"/>
+                        <segue destination="eZf-Nb-6PU" kind="push" identifier="tagSegue" id="916-iV-S7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxu-uv-tTR" userLabel="First Responder" sceneMemberID="firstResponder"/>

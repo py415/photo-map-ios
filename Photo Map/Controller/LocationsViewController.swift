@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
-// ----- TODO: Add protocol to communicate with PhotoMapViewController
+protocol LocationsViewControllerDelegate: class {
+    
+    func locationsPickedLocation(controller: LocationsViewController, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
+    
+}
 
 class LocationsViewController: UIViewController {
-    
-    // ––––– TODO: Add delegate
-    
-    // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +26,7 @@ class LocationsViewController: UIViewController {
     private let clientSecret = Constant.clientSecret
     
     private var results: NSArray = []
+    weak var delegate: LocationsViewControllerDelegate!
     
     override func viewDidLoad() {
         
@@ -43,10 +45,10 @@ class LocationsViewController: UIViewController {
         
     }
     
-    func fetchLocations(_ query: String, near: String = "San Francisco") {
+    private func fetchLocations(_ query: String, near: String = "San Francisco") {
         
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
-        let queryString = "client_id=\(clientId)&client_secret=\(clientSecret)&v=20141020&near=\(near),CA&query=\(query)"
+        let queryString = "client_id=\(clientId!)&client_secret=\(clientSecret!)&v=20141020&near=\(near),CA&query=\(query)"
         let url = URL(string: baseUrlString + queryString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let request = URLRequest(url: url)
         let session = URLSession(
@@ -104,15 +106,16 @@ extension LocationsViewController: UITableViewDataSource, UITableViewDelegate {
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
         
-        /*-------TODO--------*/
-        //Set the latitude and longitude of the venue and send it to the protocol
-        
-        // Return to the PhotoMapViewController with the lat and lng of venue
-        
         let latString = "\(lat)"
         let lngString = "\(lng)"
         
         print(latString + " " + lngString)
+        
+        //Set the latitude and longitude of the venue and send it to the protocol
+        delegate!.locationsPickedLocation(controller: self, latitude: CLLocationDegrees(truncating: lat), longitude: CLLocationDegrees(truncating: lng))
+        
+        // Return to the PhotoMapViewController with the lat and lng of venue
+        navigationController?.popViewController(animated: true)
         
     }
     

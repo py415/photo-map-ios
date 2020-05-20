@@ -11,7 +11,7 @@
 import UIKit
 import MapKit
 
-class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
+class PhotoMapViewController: UIViewController, UINavigationControllerDelegate, MKMapViewDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -28,6 +28,9 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         
         // Set properties for button
         cameraButton.makeCircular()
+        
+        // Set class as delegate
+        mapView.delegate = self
         
         // One degree of latitude is approximately 111 kilometers (69 miles) at all times.
         // San Francisco Lat, Long = latitude: 37.783333, longitude: -122.416667
@@ -75,11 +78,28 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         
     }
     
-    /* ----- TODO: Override prepare (for segue) funcion to show Present LocationsViewController */
+    // Add pin to map
+    private func addPin(atLat latitude: CLLocationDegrees, andLong longitude: CLLocationDegrees) {
+        
+        let annotation = MKPointAnnotation()
+        let locationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        annotation.coordinate = locationCoordinate
+        annotation.title = "Latitude: \(latitude), Longitude: \(longitude)"
+        
+        mapView.addAnnotation(annotation)
+        
+    }
     
-    /* ----- TODO: Retrieve coordinates from LocationsViewController   */
-    
-    /* ----- TODO: add pin to the map */
+    internal func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        if let annotation = view.annotation {
+            if let title = annotation.title! {
+                print("Tapped \(title) pin")
+            }
+        }
+        
+    }
     
     /* ----- TODO: Customize mapview to add custom map notations */
     
@@ -96,6 +116,14 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
     private func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
         
         return input.rawValue
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let locationsViewController = segue.destination as! LocationsViewController
+        
+        locationsViewController.delegate = self
         
     }
     
@@ -121,6 +149,18 @@ extension PhotoMapViewController: UIImagePickerControllerDelegate {
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "tagSegue", sender: nil)
+        
+    }
+    
+}
+
+extension PhotoMapViewController: LocationsViewControllerDelegate {
+    
+    func locationsPickedLocation(controller: LocationsViewController, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        
+        print("Location picked")
+        
+        addPin(atLat: latitude, andLong: longitude)
         
     }
     
