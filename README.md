@@ -15,19 +15,19 @@ Photo Map is an app that will allow the user to take a photo, tag it with a loca
 ## Product Specs
 ### User Stories
 
-- [ ] User shall be able to see a view a map.
-- [ ] User shall be able to take a photo.
-- [ ] User shall be able to tag a location.
-- [ ] User shall be able to drop a pin with image annotation.
-- [ ] User shall be able to see custom annotation.
-- [ ] User shall be able to see Fullscreen Picture.
-- [ ] User shall be able to see a custom image for the "pin".
+- [X] User shall be able to see a view a map.
+- [X] User shall be able to take a photo.
+- [X] User shall be able to tag a location.
+- [X] User shall be able to drop a pin with image annotation.
+- [X] User shall be able to see custom annotation.
+- [X] User shall be able to see Fullscreen Picture.
+- [X] User shall be able to see a custom image for the "pin".
 
 ## App Walkthrough
 
 Here's a GIF of how the app works:
 
-<img src="ADD_GIF_LINK" width=250><br>
+<img src="https://user-images.githubusercontent.com/35745973/82396668-53d0e580-9a03-11ea-9331-b3f53992a3e4.gif" width=250><br>
 
 ## Open-source libraries used
 
