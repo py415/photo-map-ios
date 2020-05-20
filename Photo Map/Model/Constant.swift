@@ -38,3 +38,28 @@ extension UIButton {
     }
     
 }
+
+extension UIImage {
+    
+    func makeImageCircular(width: CGFloat, height: CGFloat) -> UIImage? {
+        
+        let imageView: UIImageView = UIImageView(image: self)
+
+        imageView.frame.size = CGSize(width: width, height: height)
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = imageView.frame.size.height / 2
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.contentMode = .scaleAspectFill
+        
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+        
+    }
+    
+}

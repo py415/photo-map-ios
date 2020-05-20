@@ -6,8 +6,6 @@
 //  Copyright © 2015 Timothy Lee. All rights reserved.
 //
 
-/* -- Comment -- */
-
 import UIKit
 import MapKit
 
@@ -32,17 +30,19 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         // Set class as delegate
         mapView.delegate = self
         
-        // One degree of latitude is approximately 111 kilometers (69 miles) at all times.
-        // San Francisco Lat, Long = latitude: 37.783333, longitude: -122.416667
-        let mapCenter = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
-        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
-        // Set animated property to true to animate the transition to the region
-        mapView.setRegion(region, animated: false)
+        // Initial map position
+        setMapPosition()
         
     }
     
     // MARK: - IBAction Section
+    
+    @IBAction func resetMapPosition(_ sender: UIBarButtonItem) {
+        
+        setMapPosition()
+        
+    }
+    
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
         
         print("Camera button tapped...")
@@ -53,6 +53,19 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     // MARK: - Private Functions Section
+    
+    // Set initial map position
+    private func setMapPosition() {
+        
+        // One degree of latitude is approximately 111 kilometers (69 miles) at all times.
+        // San Francisco Lat, Long = latitude: 37.783333, longitude: -122.416667
+        let mapCenter = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
+        // Set animated property to true to animate the transition to the region
+        mapView.setRegion(region, animated: false)
+        
+    }
     
     // Instantiate Image Picker and set delegate to this view controller
     private func selectPhoto() {
@@ -91,18 +104,6 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
         
     }
     
-    internal func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-        if let annotation = view.annotation {
-            if let title = annotation.title! {
-                print("Tapped \(title) pin")
-            }
-        }
-        
-    }
-    
-    /* ----- TODO: Customize mapview to add custom map notations */
-    
     // MARK: - Helper Functions Section
     
     // Helper function inserted by Swift 4.2 migrator.
@@ -120,10 +121,16 @@ class PhotoMapViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let locationsViewController = segue.destination as! LocationsViewController
-        
-        locationsViewController.delegate = self
+    
+        if segue.identifier == "tagSegue" {
+            let locationsViewController = segue.destination as! LocationsViewController
+            
+            locationsViewController.delegate = self
+        } else if segue.identifier == "fullImageSegue" {
+            let fullImageViewController = segue.destination as! FullImageViewController
+            
+            fullImageViewController.pickedImage = pickedImage
+        }
         
     }
     
@@ -168,6 +175,18 @@ extension PhotoMapViewController: LocationsViewControllerDelegate {
 
 extension PhotoMapViewController: MKMapViewDelegate {
     
+    internal func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        if let annotation = view.annotation {
+            if let title = annotation.title! {
+                print("Tapped \(title) pin")
+            }
+        }
+        
+    }
+    
+    // MARK: - MKMapViewDelegate Section
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseID = "myAnnotationView"
@@ -179,24 +198,24 @@ extension PhotoMapViewController: MKMapViewDelegate {
             annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         }
 
-        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
-
         // Add the image you stored from the image picker
+        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
+        annotationView?.image = pickedImage.makeImageCircular(width: 50, height: 50)
         imageView.image = pickedImage
+
+        // Add an info button to the callout "bubble" of the annotation view
+        let rightCalloutButton = UIButton(type: .detailDisclosure)
+        annotationView?.rightCalloutAccessoryView = rightCalloutButton
 
         return annotationView
         
     }
     
-//    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-//
-//        let lattitude = view.annotation?.coordinate.latitude
-//        let longitude = view.annotation?.coordinate.longitude
-//
-//        guard let appleMapsURL = URL(string: "http://maps.apple.com/?q=\(lattitude),\(longitude)") else { return }
-//
-//        UIApplication.shared.open(appleMapsURL, options: [:], completionHandler: nil)
-//
-//    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        // Segue to FullImageViewController when right pin accessory (i) is tapped
+        performSegue(withIdentifier: "fullImageSegue", sender: self)
+        
+    }
     
 }

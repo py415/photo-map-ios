@@ -21,7 +21,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eVq-Ul-LZf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </mapView>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-RY-F8c">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-RY-F8c">
                                 <rect key="frame" x="147" y="682" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -44,7 +44,13 @@
                             <constraint firstItem="ufw-e1-uLx" firstAttribute="top" secondItem="U8i-RY-F8c" secondAttribute="bottom" constant="80" id="xEG-qH-3ID"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo Map" id="aPF-0T-Ydb"/>
+                    <navigationItem key="navigationItem" title="Photo Map" id="aPF-0T-Ydb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="OtH-Jt-mRm">
+                            <connections>
+                                <action selector="resetMapPosition:" destination="ghP-Ww-KKQ" id="DNv-ha-a9f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="U8i-RY-F8c" id="k9r-AU-h0d"/>
                         <outlet property="mapView" destination="eVq-Ul-LZf" id="kKU-iK-t9v"/>
@@ -56,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="922" y="-3"/>
         </scene>
-        <!--Full Image View Controller-->
+        <!--Photo-->
         <scene sceneID="VWW-Rb-sI4">
             <objects>
                 <viewController id="WeT-38-qba" customClass="FullImageViewController" customModule="Photo_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,13 +73,27 @@
                     <view key="view" contentMode="scaleToFill" id="IER-PT-2nq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-3N-tyK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E6p-3N-tyK" firstAttribute="leading" secondItem="IER-PT-2nq" secondAttribute="leading" id="4Kb-Lj-76b"/>
+                            <constraint firstAttribute="bottom" secondItem="E6p-3N-tyK" secondAttribute="bottom" id="8Kj-iD-MSU"/>
+                            <constraint firstAttribute="trailing" secondItem="E6p-3N-tyK" secondAttribute="trailing" id="Jwk-lD-5K8"/>
+                            <constraint firstItem="E6p-3N-tyK" firstAttribute="top" secondItem="FF8-mr-LhG" secondAttribute="bottom" id="SSf-Hq-Ygr"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HUo-VF-R6y"/>
+                    <navigationItem key="navigationItem" title="Photo" id="HUo-VF-R6y"/>
+                    <connections>
+                        <outlet property="pickedImageView" destination="E6p-3N-tyK" id="ef2-5j-sKx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRl-fe-rlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="711"/>
+            <point key="canvasLocation" x="920.28985507246387" y="710.49107142857144"/>
         </scene>
         <!--Add Location-->
         <scene sceneID="iO8-f3-thv">

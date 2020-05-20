@@ -10,9 +10,18 @@ import UIKit
 
 class FullImageViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var pickedImageView: UIImageView!
+    
+    // MARK: - Properties
+    var pickedImage: UIImage?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // Set pickedImageView as pickedImage
+        pickedImageView.image = pickedImage
 
     }
 
