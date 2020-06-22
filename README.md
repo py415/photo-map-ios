@@ -27,7 +27,7 @@ Photo Map is an app that will allow the user to take a photo, tag it with a loca
 
 Here's a GIF of how the app works:
 
-<img src="https://user-images.githubusercontent.com/35745973/82396668-53d0e580-9a03-11ea-9331-b3f53992a3e4.gif" width=250>
+<img src="https://github.com/py415/app-resources/blob/master/ios/ios-photo-map.gif" width=250>
 
 ## Libraries
 
